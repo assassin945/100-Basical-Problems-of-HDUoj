@@ -1,37 +1,25 @@
-﻿// 2036.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+﻿// 2039.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
 
 #include <iostream>
 using namespace std;
-struct points {
-	int x;
-	int y;
-};
 int main() {
-	//p为原点，也可以为任意点
-	points p;
-	p.x = 0;
-	p.y = 0;
-	points a[100];
 	int n;
-	while (cin >> n && n != 0) {
-		double res = 0.0;
-		for (int i = 0; i < n; i++) {
-			cin >> a[i].x >> a[i].y;
+	cin >> n;
+	double a, b, c;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> a >> b >> c;
+		if ((a + b > c)&&(b + c > a)&&(c + a > b))
+		{
+			cout << "YES" << endl;
 		}
-		for (int j = 0; j < n - 1; j++) {
-			//偷懒没有把p点带进来，若p为任意点，向量坐标表示要把p点坐标代进去
-			res += a[j].x * a[j + 1].y - a[j].y * a[j + 1].x;
+		else {
+			cout << "NO" << endl;
 		}
-		//保证逆时针首尾相连
-		res += a[n - 1].x * a[0].y - a[n - 1].y * a[0].x;
-		res /= 2;
-		cout.precision(1);
-		cout << fixed << res << endl;
 	}
-	return 0;
 }
-
+// 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
 // 调试程序: F5 或调试 >“开始调试”菜单
 
 // 入门使用技巧: 
