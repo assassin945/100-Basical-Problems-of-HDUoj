@@ -1,20 +1,26 @@
-﻿// 2050.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+﻿// 2053.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
 
 #include <iostream>
+#include <cmath>
 using namespace std;
-
 int main()
 {
-	int  i, j, n;
-	cin >> n;
-	while (n--)
+	int n;
+	int temp1;
+	int temp2;
+	while (cin>>n)
 	{
-		cin >> i;
-		j = 2 * i * (i - 1) + i + 1;
-		cout << j << endl;
+		temp1 = int(sqrt(n));
+		temp2 = n / temp1;
+		if (n % temp1 == 0 && temp1 == temp2)
+		{
+			cout << 1 << endl;
+		}
+		else {
+			cout << 0 << endl;
+		}
 	}
-	return 0;
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单

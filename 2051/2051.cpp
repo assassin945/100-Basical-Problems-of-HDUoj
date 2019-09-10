@@ -1,20 +1,29 @@
-﻿// 2050.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+﻿// 2051.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
 
 #include <iostream>
+#include <vector>
 using namespace std;
-
 int main()
 {
-	int  i, j, n;
-	cin >> n;
-	while (n--)
+	int n, m;
+	vector<int> binary;
+	while (cin>>n)
 	{
-		cin >> i;
-		j = 2 * i * (i - 1) + i + 1;
-		cout << j << endl;
+		m = 0;
+		while (n != 0)
+		{
+			m = n % 2;
+			n = n / 2;
+			binary.push_back(m);
+		}
+		for (int i = binary.size() - 1; i >= 0; i--)
+		{
+			cout << binary[i];
+		}
+		cout << endl;
+		binary.clear();
 	}
-	return 0;
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单

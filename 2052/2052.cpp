@@ -1,20 +1,34 @@
-﻿// 2050.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
-//
-
+﻿#define _CRT_SECURE_NO_DEPRECATE
 #include <iostream>
 using namespace std;
-
 int main()
 {
-	int  i, j, n;
-	cin >> n;
-	while (n--)
+	int m, n;
+	while (scanf("%d%d", &m, &n) != EOF)
 	{
-		cin >> i;
-		j = 2 * i * (i - 1) + i + 1;
-		cout << j << endl;
+		cout << "+";
+		for (int i = 0; i < m; i++)
+		{
+			cout << "-";
+		}
+		cout << "+" << endl;
+		for (int j = 0; j < n; j++)
+		{
+			cout << "|";
+			for (int k = 0; k < m; k++)
+			{
+				cout << " ";
+			}
+			cout << "|" << endl;
+		}
+		cout << "+";
+		for (int i = 0; i < m; i++)
+		{
+			cout << "-";
+		}
+		cout << "+" << endl;
+		cout << endl;
 	}
-	return 0;
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
